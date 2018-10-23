@@ -150,8 +150,10 @@ builder.create().show();
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()){
             case R.id.action_reset:
-                mCurrentItem = new Item();
-                showCurrentItem();
+                clearAll();
+
+//                mCurrentItem = new Item();
+//                showCurrentItem();
                 return true;
             case R.id.action_settings:
                // startActivity(new Intent(Settings.ACTION_SETTINGS));
@@ -161,5 +163,26 @@ builder.create().show();
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    private void clearAll() {
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+
+        builder.setTitle("Reset Jersey");
+        builder.setMessage("Are you sure you want to reset your jersey?");
+        builder.setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                mCurrentItem = new Item();
+
+                showCurrentItem();
+            }
+        });
+
+        builder.setNegativeButton(android.R.string.cancel, null);
+
+
+        builder.create().show();
     }
 }
