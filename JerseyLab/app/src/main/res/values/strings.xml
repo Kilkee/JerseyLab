@@ -2,4 +2,7 @@
     <string name="app_name">JerseyLab</string>
     <string name="action_settings">Settings</string>
     <string name="number_format"> %d</string>
+    <string name="jersey_number">Number</string>
+    <string name="update_jersey">Update Jersey info</string>
+
 </resources>
